@@ -11,8 +11,17 @@ from files.app import get_config
 from files.app import shrey
 from files.readjson import get_jsonconfig
 
-#variable that need to be edited
-data_local = '[[local|localrc]]\r\nRECLONE=True\r\nHOST_IP=192.168.195.182\r\nSERVICE_TOKEN=mytoken123\r\nADMIN_PASSWORD=openstack123\r\nMYSQL_PASSWORD=mysql123\r\nRABBIT_PASSWORD=rabbit123\r\nSERVICE_PASSWORD=$ADMIN_PASSWORD\r\nLOGFILE=$DEST/logs/stack.sh.log\r\nLOGDAYS=2\r\nenable_plugin neutron-lbaas https://github.com/openstack/neutron-lbaas.git stable/ocata\r\ndisable_service n-net c-api c-sch c-vol\r\nenable_service q-svc q-agt q-dhcp q-l3 q-meta q-lbaasv2'
+# variable that need to be edited
+data_local = '[[local|localrc]]\r\nRECLONE=True\r\n\
+        HOST_IP=192.168.195.182\r\nSERVICE_TOKEN=mytoken123\r\n\
+        ADMIN_PASSWORD=openstack123\r\nMYSQL_PASSWORD=mysql123\r\n\
+        RABBIT_PASSWORD=rabbit123\r\nSERVICE_PASSWORD=$ADMIN_PASSWORD\r\n\
+        LOGFILE=$DEST/logs/stack.sh.log\r\nLOGDAYS=2\r\n\
+        enable_plugin neutron-lbaas\
+        https://github.com/openstack/neutron-lbaas.git stable/ocata\r\n\
+        disable_service n-net c-api c-sch c-vol\r\n\
+        enable_service q-svc q-agt q-dhcp q-l3 q-meta q-lbaasv2'
+
 
 def listuser(command, CONF):
     cmd1 = 'cut -d: -f1 /etc/passwd'
@@ -26,31 +35,39 @@ def deluser(command, delusername):
 
 def devsetup(devinstalation, CONF):
     devinstalation.cmd('apt install git -y', sudo=True)
-    devVersion = 'git clone https://github.com/openstack-dev/devstack.git -b stable/ocata'
+    devVersion = 'git clone https://github.com/openstack-dev/devstack.git -b \
+            stable/ocata'
     devinstalation.cmd(devVersion, sudo=True)
     devinstalation.local_conf(CONF.appdata.file_name, data_local)
 
 
 def usercreation(userinstalation, CONF):
-    cmd1 = "useradd -s /bin/bash -d /opt/%s -m %s" % (CONF.appdata.devUser, CONF.appdata.devUser)
-    cmd2 = 'echo "%s ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers' % (CONF.appdata.devUser)
+    cmd1 = "useradd -s /bin/bash -d /opt/%s -m %s" % \
+            (CONF.appdata.devUser, CONF.appdata.devUser)
+    cmd2 = 'echo "%s ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers' % \
+           (CONF.appdata.devUser)
     devusername = CONF.appdata.devUser
     devuserpwd = CONF.appdata.devUserPwd
-    setpwd=True
-    userinstalation.rootcmd(cmd1,cmd2,setpwd,devusername,devuserpwd)
+    setpwd = True
+    userinstalation.rootcmd(cmd1, cmd2, setpwd, devusername, devuserpwd)
 
 
 def connect_ssh():
     CONF = get_config()
-    userinstalation=Devstack(CONF.appdata.ip, CONF.appdata.username, CONF.appdata.password)
+    userinstalation = Devstack(
+            CONF.appdata.ip, CONF.appdata.username, CONF.appdata.password)
     usercreation(userinstalation, CONF)
-    devinstalation=Devstack(CONF.appdata.ip, CONF.appdata.devUser, CONF.appdata.devUserPwd)
+    devinstalation = Devstack(
+            CONF.appdata.ip, CONF.appdata.devUser, CONF.appdata.devUserPwd)
     devsetup(devinstalation, CONF)
 
 
+def maincompilationcheck():
+    return True
+
 if __name__ == '__main__':
-    print('starting '+ __name__)
+    print('starting ' + __name__)
     connect_ssh()
     data = get_jsonconfig()
-    print data
-    print('stoping'+ __name__)
+    print(data)
+    print('stoping' + __name__)

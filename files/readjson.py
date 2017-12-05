@@ -10,5 +10,9 @@ def get_jsonconfig():
     return jsondata
 
 
+def readjsoncompilationcheck():
+    return True
+
+
 if __name__ == '__main__':
     get_jsonconfig()
