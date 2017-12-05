@@ -9,6 +9,7 @@ import time
 from files.sshAutomation import Devstack
 from files.app import get_config
 from files.app import shrey
+from files.readjson import get_jsonconfig
 
 #variable that need to be edited
 data_local = '[[local|localrc]]\r\nRECLONE=True\r\nHOST_IP=192.168.195.182\r\nSERVICE_TOKEN=mytoken123\r\nADMIN_PASSWORD=openstack123\r\nMYSQL_PASSWORD=mysql123\r\nRABBIT_PASSWORD=rabbit123\r\nSERVICE_PASSWORD=$ADMIN_PASSWORD\r\nLOGFILE=$DEST/logs/stack.sh.log\r\nLOGDAYS=2\r\nenable_plugin neutron-lbaas https://github.com/openstack/neutron-lbaas.git stable/ocata\r\ndisable_service n-net c-api c-sch c-vol\r\nenable_service q-svc q-agt q-dhcp q-l3 q-meta q-lbaasv2'
@@ -50,4 +51,6 @@ def connect_ssh():
 if __name__ == '__main__':
     print('starting '+ __name__)
     connect_ssh()
+    data = get_jsonconfig()
+    print data
     print('stoping'+ __name__)

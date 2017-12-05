@@ -33,7 +33,6 @@ class Devstack:
             print ("Unknown error")
             quit()
         self.ssh.load_system_host_keys()
-        #self.cmd()
 
 
     def __del__(self):
@@ -57,7 +56,6 @@ class Devstack:
         f.close()
 
     def rootcmd(self, cmd1 ,cmd2, setpwd=False,username='default', pwd='root'):
-        #print('---'+cmd0+' '+cmd1+' '+cmd2+'-----')
         channel = self.ssh.invoke_shell()
         out = channel.recv(9999)
         channel.send('sudo su -\r\n')
@@ -86,27 +84,6 @@ class Devstack:
         print(out.decode("ascii"))
 
 
-        #self.chan.exec_command(cmd0 +' \r\n '+'root'+'\r\n '+ cmd1 +' \r\n '+ cmd2 )#sudo -k dmesg
-        #stdout=self.chan.recv(4096)
-        #while self.chan.recv_ready()==False:
-        #    stdout=self.chan.recv(4096)
-        #    if re.search('[Pp]assword', stdout):
-        #        self.chan.send('root'+'\n')
-        #    time.sleep(1)
-        #while self.chan.recv_ready():
-        #    stdout += self.chan.recv(20000)
-
-        #self.chan.exec_command(cmd1)#sudo -k dmesg
-        #while self.chan.recv_ready()==False:
-        #    stdout += self.chan.recv(4096)
-
-        #self.chan.exec_command(cmd2)#sudo -k dmesg
-        #while self.chan.recv_ready()==False:
-        #    stdout += self.chan.recv(4096)
-        #print(stdout)
-        #self.chan.close()
-
-
     def cmd(self, command, sudo=False):
         feed_password = False
         if (sudo != False):
@@ -131,15 +108,9 @@ class Devstack:
                 print i
 
 
-
 if __name__ == '__main__':
     print('starting '+ __name__)
     instal1=Devstack(ip, username, password)
     instal1.cmd('ls -al')
     instal1.local_conf(file_name, data_local)
     print('stoping')
-
-# http://www.minvolai.com/blog/2009/09/How-to-ssh-in-python-using-Paramiko/how-to-ssh-in-python-using-paramiko/
-#https://stackoverflow.com/questions/36490989/how-to-keep-ssh-session-not-expired-using-paramiko
-#https://groups.google.com/forum/#!topic/robotframework-users/hVTsDKjomKI
-##https://stackoverflow.com/questions/22587855/running-sudo-command-with-paramiko
