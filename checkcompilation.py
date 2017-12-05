@@ -10,6 +10,7 @@ from files.sshAutomation import Devstack
 from files.app import get_config
 # from files.app import shrey
 from files.readjson import get_jsonconfig
+from files.readyaml import get_yamlconfig
 from main import maincompilationcheck
 from files.app import appcompilationcheck
 from files.readjson import readjsoncompilationcheck
@@ -27,6 +28,11 @@ if __name__ == '__main__':
         print('JSON read pass')
     else:
         print('JSON read fail')
+    data = get_yamlconfig()
+    if(data):
+        print('YAML read pass')
+    else:
+        print('YAML read fail')
     data = maincompilationcheck()
     if(data):
         print('interpretation of main.py pass')
