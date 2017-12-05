@@ -17,7 +17,7 @@ from files.sshAutomation import sshAutomationcompilationcheck
 
 if __name__ == '__main__':
     # print('starting ' + __name__)
-    data = get_config()
+    data= get_config()
     if(data):
         print('OSLO_config read pass')
     else:
