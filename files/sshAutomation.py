@@ -35,9 +35,9 @@ class Devstack:
             quit()
         self.ssh.load_system_host_keys()
 
-    def __del__(self):
-        print("SSH connection clossed for %s" % self.ip_address)
-        self.ssh.close()
+    # def __del__(self):
+    #    print("SSH connection clossed for %s" % self.ip_address)
+    #    self.ssh.close()
 
     def close(self):
         if self.ssh is not None:
@@ -60,7 +60,7 @@ class Devstack:
         out = channel.recv(9999)
         channel.send('sudo su -\r\n')
         time.sleep(2)
-        channel.send('root\r\n')
+        channel.send(self.password+'\r\n')
         time.sleep(5)
         # while not channel.recv_ready():
         #     time.sleep(3)
