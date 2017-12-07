@@ -13,6 +13,10 @@ from files.app import shrey
 from files.readjson import get_jsonconfig
 
 
+def maincompilationcheck():
+    return True
+
+
 def listuser(command, CONF):
     cmd1 = 'cut -d: -f1 /etc/passwd'
     command.cmd(cmd1)

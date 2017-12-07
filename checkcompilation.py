@@ -14,6 +14,7 @@ from files.readyaml import get_yamlconfig
 from main import maincompilationcheck
 from files.app import appcompilationcheck
 from files.readjson import readjsoncompilationcheck
+from files.readyaml import readyamlcompilationcheck
 from files.sshAutomation import sshAutomationcompilationcheck
 
 if __name__ == '__main__':
@@ -48,6 +49,11 @@ if __name__ == '__main__':
         print('interpretation of readjson.py pass')
     else:
         print('interpretation of readjson.py fail')
+    data = readyamlcompilationcheck()
+    if(data):
+        print('interpretation of readyaml.py pass')
+    else:
+        print('interpretation of readyaml.py fail')
     data = sshAutomationcompilationcheck()
     if(data):
         print('interpretation of sshAutomation.py pass')
