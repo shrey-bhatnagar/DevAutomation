@@ -6,6 +6,7 @@ import select
 import paramiko
 import time
 import re
+import exception
 
 
 class Devstack:
@@ -41,17 +42,25 @@ class Devstack:
 
     def close(self):
         if self.ssh is not None:
-            self.ssh.close()
-            self.ssh = None
+            try:
+                self.ssh.close()
+                self.ssh = None
+            except:
+                pass
 
     def local_conf(self, filename, data):
         self.sftp = self.ssh.open_sftp()
+        filepath = filename
         try:
-            self.sftp.mkdir('devstack')
-        except IOError:
-            pass
-        f = self.sftp.open('devstack/' + filename, 'w')
-        f.write(data)
+            try:
+                self.sftp.chdir('devstack')
+            except IOError:
+                self.sftp.mkdir('devstack')
+                filepath = 'devstack/' + filename
+            f = self.sftp.open(filepath, 'w')
+            f.write(data)
+        except exception as e:
+            print '*** Caught exception: %s: %s' % (e.__class__, e)
         f.close()
 
     def rootcmd(self, cmd1, cmd2, setpwd=False,

@@ -1,5 +1,6 @@
 
-11-5-17[03:00 PM], adding Initial code. <author- shrey>
+12-5-17[03:00 PM], adding Initial code. <author- shrey>
 12-5-17[05:20 PM], adding json support to read config in JSON formate. <author- shrey>
-12-5-17[12:40 AM], adding Yaml support to read config in YAML formate. <author- shrey>
-13-5-17[02:57 PM], Divided code in ster-1 and step-2. <author- shrey>
+12-6-17[12:40 AM], adding Yaml support to read config in YAML formate. <author- shrey>
+12-6-17[02:57 PM], Divided code in ster-1 and step-2. <author- shrey>
+12-7-17[12:53 PM], Code working!!!, reading data from JSON config setup. <author- shrey>
