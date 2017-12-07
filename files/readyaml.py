@@ -4,7 +4,7 @@ import yaml
 
 
 def get_yamlconfig():
-    with open("myappConfig.yaml", 'r') as stream:
+    with open("configration/myappConfig.yaml", 'r') as stream:
         try:
             yaml_data = yaml.load(stream)
             # import pdb;pdb.set_trace()

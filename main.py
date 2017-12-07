@@ -72,5 +72,4 @@ def connect_ssh():
 if __name__ == '__main__':
     print('starting ' + __name__)
     connect_ssh()
-    # pdb.set_trace()
     print('stoping' + __name__)

@@ -32,7 +32,7 @@ def register_opts():
 
 
 def get_config():
-    cfg.CONF(default_config_files=['myapp.conf'])
+    cfg.CONF(default_config_files=['configration/myapp.conf'])
     register_opts()
     return cfg.CONF
 
