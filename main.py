@@ -79,5 +79,5 @@ def connect_ssh():
 
 if __name__ == '__main__':
     mylog.log.info('Starting main.py')
-    #connect_ssh()
+    connect_ssh()
     mylog.log.info('Stoping main.py')
