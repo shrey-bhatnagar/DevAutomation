@@ -6,11 +6,15 @@ import select
 import paramiko
 import time
 import pdb
-
+import logging
 from files.sshAutomation import Devstack
-from files.app import get_config
-from files.app import shrey
+from files.osloconfig import get_config
+from files.osloconfig import shrey
 from files.readjson import get_jsonconfig
+from files.applogging import Logger_check
+
+
+mylog = Logger_check('main', logging.INFO)
 
 
 def maincompilationcheck():
@@ -74,6 +78,6 @@ def connect_ssh():
 
 
 if __name__ == '__main__':
-    print('starting ' + __name__)
-    connect_ssh()
-    print('stoping' + __name__)
+    mylog.log.info('Starting main.py')
+    #connect_ssh()
+    mylog.log.info('Stoping main.py')

@@ -2,6 +2,7 @@
 
 from __future__ import print_function
 from oslo_config import cfg
+import os
 
 
 opt_appdata_group = cfg.OptGroup(name='appdata', title='app configuration')
@@ -51,7 +52,7 @@ def shrey():
     # print(CONF.appdata.data_local1)
 
 
-def appcompilationcheck():
+def osloconfigcompilationcheck():
     return True
 
 

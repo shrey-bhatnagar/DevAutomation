@@ -5,20 +5,25 @@ import sys
 import select
 import paramiko
 import time
-
+import logging
+from files.applogging import Logger_check
 from files.sshAutomation import Devstack
-from files.app import get_config
-# from files.app import shrey
+from files.osloconfig import get_config
 from files.readjson import get_jsonconfig
 from files.readyaml import get_yamlconfig
 from main import maincompilationcheck
-from files.app import appcompilationcheck
+from files.osloconfig import osloconfigcompilationcheck
 from files.readjson import readjsoncompilationcheck
 from files.readyaml import readyamlcompilationcheck
 from files.sshAutomation import sshAutomationcompilationcheck
+from files.applogging import apploggingcompilationcheck
+from files.applogging import Logger_check
+
 
 if __name__ == '__main__':
     # print('starting ' + __name__)
+    mylog = Logger_check('checkcompilation', logging.INFO)
+    mylog.log.info('Starting checkcompilation.py')
     data = get_config()
     if(data):
         print('OSLO_config read pass')
@@ -39,11 +44,11 @@ if __name__ == '__main__':
         print('interpretation of main.py pass')
     else:
         print('interpretation of main.py fail')
-    data = appcompilationcheck()
+    data = osloconfigcompilationcheck()
     if(data):
-        print('interpretation of app.py pass')
+        print('interpretation of osloconfig.py pass')
     else:
-        print('interpretation of app.py fail')
+        print('interpretation of osloconfig.py fail')
     data = readjsoncompilationcheck()
     if(data):
         print('interpretation of readjson.py pass')
@@ -59,4 +64,10 @@ if __name__ == '__main__':
         print('interpretation of sshAutomation.py pass')
     else:
         print('interpretation of sshAutomation.py fail')
+    data = apploggingcompilationcheck()
+    if(data):
+        print('interpretation of applogging.py pass')
+    else:
+        print('interpretation of applogging.py fail')
+    mylog.log.info('Stoping checkcompilation.py')
     # print('stoping' + __name__)
