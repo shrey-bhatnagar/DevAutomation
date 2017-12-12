@@ -20,54 +20,59 @@ from files.applogging import apploggingcompilationcheck
 from files.applogging import Logger_check
 
 
+mylog = Logger_check('checkcompilation', logging.INFO)
+
+
+def myprint(str):
+    print(str)
+    mylog.log.info(str)
+
+
 if __name__ == '__main__':
-    # print('starting ' + __name__)
-    mylog = Logger_check('checkcompilation', logging.INFO)
-    mylog.log.info('Starting checkcompilation.py')
+    myprint('Starting checkcompilation.py')
     data = get_config()
     if(data):
-        print('OSLO_config read pass')
+        myprint('OSLO_config read pass')
     else:
-        print('OSLO_config read fail')
+        myprint('OSLO_config read fail')
     data = get_jsonconfig()
     if(data):
-        print('JSON read pass')
+        myprint('JSON read pass')
     else:
-        print('JSON read fail')
+        myprint('JSON read fail')
     data = get_yamlconfig()
     if(data):
-        print('YAML read pass')
+        myprint('YAML read pass')
     else:
-        print('YAML read fail')
+        myprint('YAML read fail')
     data = maincompilationcheck()
     if(data):
-        print('interpretation of main.py pass')
+        myprint('interpretation of main.py pass')
     else:
-        print('interpretation of main.py fail')
+        myprint('interpretation of main.py fail')
     data = osloconfigcompilationcheck()
     if(data):
-        print('interpretation of osloconfig.py pass')
+        myprint('interpretation of osloconfig.py pass')
     else:
-        print('interpretation of osloconfig.py fail')
+        myprint('interpretation of osloconfig.py fail')
     data = readjsoncompilationcheck()
     if(data):
-        print('interpretation of readjson.py pass')
+        myprint('interpretation of readjson.py pass')
     else:
-        print('interpretation of readjson.py fail')
+        myprint('interpretation of readjson.py fail')
     data = readyamlcompilationcheck()
     if(data):
-        print('interpretation of readyaml.py pass')
+        myprint('interpretation of readyaml.py pass')
     else:
-        print('interpretation of readyaml.py fail')
+        myprint('interpretation of readyaml.py fail')
     data = sshAutomationcompilationcheck()
     if(data):
-        print('interpretation of sshAutomation.py pass')
+        myprint('interpretation of sshAutomation.py pass')
     else:
-        print('interpretation of sshAutomation.py fail')
+        myprint('interpretation of sshAutomation.py fail')
     data = apploggingcompilationcheck()
     if(data):
-        print('interpretation of applogging.py pass')
+        myprint('interpretation of applogging.py pass')
     else:
-        print('interpretation of applogging.py fail')
-    mylog.log.info('Stoping checkcompilation.py')
-    # print('stoping' + __name__)
+        myprint('interpretation of applogging.py fail')
+    mylog.log.info('Stoping checkcompilation.py\r\n\r\n')

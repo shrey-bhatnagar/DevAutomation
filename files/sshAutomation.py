@@ -7,42 +7,55 @@ import paramiko
 import time
 import re
 import exception
+import logging
+from files.applogging import Logger_check
+
+
+mylog = Logger_check('sshAutomation', logging.INFO)
+
+
+def myprint(str):
+    print(str)
+    mylog.log.info(str)
 
 
 class Devstack:
     ip_address = 'x.x.x.x'
 
-    def __init__(self, ip, user, pwd, key=None, passphrase=None):
+    def __init__(self, ip, user, pwd):
         self.ip_address = ip
         self.username = user
         self.password = pwd
         self.ssh = paramiko.SSHClient()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        # if key is not None:
-        #    key = paramiko.RSAKey.from_private_key(StringIO(key),\
-        #    password = passphrase)
         try:
-            print("trying to SSH connection with %s" % self.ip_address)
+            myprint("trying to SSH connection with %s" % self.ip_address)
             self.ssh.connect(ip, username=user, password=pwd, port=22)
-            print("SSH connection established to %s" % self.ip_address)
+            myprint("SSH connection established to %s" % self.ip_address)
         except paramiko.SSHException:
-            print("Connection Failed")
+            myprint("Connection Failed")
             quit()
         except paramiko.AuthenticationException:
-            print("Authentication Failed")
+            myprint("Authentication Failed")
             quit()
         except:
-            print("Unknown error")
+            myprint("Unknown error")
             quit()
         self.ssh.load_system_host_keys()
 
-    # def __del__(self):
-    #    print("SSH connection clossed for %s" % self.ip_address)
-    #    self.ssh.close()
+    def __del__(self):
+        if self.ssh is not None:
+            try:
+                myprint("SSH connection clossed for %s\r\n" % self.ip_address)
+                self.ssh.close()
+                self.ssh = None
+            except:
+                pass
 
     def close(self):
         if self.ssh is not None:
             try:
+                myprint("SSH connection clossed for %s\r\n" % self.ip_address)
                 self.ssh.close()
                 self.ssh = None
             except:
@@ -60,7 +73,7 @@ class Devstack:
             f = self.sftp.open(filepath, 'w')
             f.write(data)
         except exception as e:
-            print '*** Caught exception: %s: %s' % (e.__class__, e)
+            myprint('*** Caught exception: %s: %s' % (e.__class__, e))
         f.close()
 
     def rootcmd(self, cmd1, cmd2, setpwd=False,
@@ -74,28 +87,26 @@ class Devstack:
         # while not channel.recv_ready():
         #     time.sleep(3)
         # out = channel.recv(9999)
-        # print(out.decode("ascii"))
+        # myprint(out.decode("ascii"))
         channel.send(cmd1+'\r\n')
         time.sleep(2)
         channel.send(cmd2+'\r\n')
         time.sleep(2)
-        if(setpwd):  # if(setpwd != False):
+        if(setpwd):
             channel.send('passwd '+username+'\r\n')
             time.sleep(2)
             channel.send(pwd+'\r\n')
             time.sleep(2)
             channel.send(pwd+'\r\n')
             time.sleep(2)
-
         while not channel.recv_ready():
             time.sleep(3)
         out = channel.recv(9999)
-        print(out.decode("ascii"))
+        myprint(out.decode("ascii"))
 
     def cmd(self, command, sudo=False):
         feed_password = False
-        # if sudo and self.username != "root":
-        if (sudo):  # (sudo != False)
+        if (sudo):
             command = "sudo -S -p '' %s" % command
             feed_password = self.password is not None and\
                 len(self.password) > 0
@@ -106,24 +117,41 @@ class Devstack:
         # return {'out': stdout.readlines(),
         #         'err': stderr.readlines(),
         #         'retval': stdout.channel.recv_exit_status()}
-        # stdin, stdout, stderr = client.exec_command\
-        #         ("/var/mylongscript.py", get_pty=True)
-        b = stderr.readlines()
-        if b:
-            for i in b:
-                print(i)
-        a = stdout.readlines()
-        if a:
-            for i in a:
-                print(i)
+        return(stdout.readlines(), stderr.readlines())
+
+    def rootcmd1(self, username='default'):
+        channel = self.ssh.invoke_shell()
+        out = channel.recv(9999)
+        channel.send('sudo su - '+username+'\r\n')
+        time.sleep(2)
+        channel.send(self.password+'\r\n')
+        time.sleep(3)
+        channel.send('cd devstack\r\n')
+        time.sleep(1)
+        # channel.send('./run_tests.sh\r\n')
+        channel.send('ls -lrt\r\n')
+        max_loops = 100
+        not_done = True
+        MAX_BUFFER = 65535
+        i = 0
+        output = ''
+        while (not_done) and (i <= max_loops):
+            time.sleep(1)
+            i += 1
+            # Keep reading data as long as available (up to max_loops)
+            if channel.recv_ready():
+                output += channel.recv(MAX_BUFFER)
+            else:
+                not_done = False
+        myprint(output)
 
 
 def sshAutomationcompilationcheck():
     return True
 
 if __name__ == '__main__':
-    print('starting ' + __name__)
+    myprint('starting ' + __name__)
     instal1 = Devstack(ip, username, password)
     instal1.cmd('ls -al')
     instal1.local_conf(file_name, data_local)
-    print('stoping')
+    myprint('stoping')

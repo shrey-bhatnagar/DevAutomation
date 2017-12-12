@@ -17,6 +17,11 @@ from files.applogging import Logger_check
 mylog = Logger_check('main', logging.INFO)
 
 
+def myprint(str):
+    print(str)
+    mylog.log.info(str)
+
+
 def maincompilationcheck():
     return True
 
@@ -32,12 +37,38 @@ def deluser(command, delusername):
 
 
 def devsetup(devinstalation, devdata):
-    devinstalation.cmd('apt install git -y', sudo=True)
+    apt_git_success, apt_git_error = \
+            devinstalation.cmd('apt install git -y', sudo=True)
+    if apt_git_success[3] == 'git is already the newest version.\n':
+        myprint('##########################################')
+        myprint("### Git is already the newest version. ###")
+        myprint('##########################################')
+    elif apt_git_success[3] == 'Suggested packages:\n':
+        myprint('##############################')
+        myprint("### Git has been installed ###")
+        myprint('##############################')
+    else:
+        myprint(" GIT install Has some error ... Please re-verify")
+
+    devVersion = \
+        'git clone https://github.com/shrey-bhatnagar/DevAutomation.git'
+    clone_repo_success, clone_repo_fail = \
+        devinstalation.cmd(devVersion, sudo=False)
     # devVersion =
     # 'git clone https://github.com/openstack-dev/devstack.git -b \
     #         stable/ocata'
     # devinstalation.cmd(devVersion, sudo=True)
-    # pdb.set_trace()  # we are breaking here to check !!!
+    if clone_repo_fail != []:
+        sub_clone = clone_repo_fail[0].split()
+        if sub_clone[0] == "Cloning":
+            myprint('#################################')
+            myprint('########Repository Cloned########')
+            myprint('#################################')
+        else:
+            if sub_clone[0] == 'fatal:':
+                myprint('#################################')
+                myprint('####Repository Already Exists####')
+                myprint('#################################')
     devinstalation.local_conf(devdata['file_name'],
                               devdata['data_local'])
     # devinstalation.cmd('cd devstack')
@@ -60,6 +91,7 @@ def step1(jsondata):
     devdata = jsondata['devdata']
     userinstalation = Devstack(
             userdata['ip'], userdata['username'], userdata['password'])
+    # userinstalation.rootcmd1(devdata['devUser'])
     usercreation(userinstalation, devdata)
     userinstalation.close()
 
@@ -79,5 +111,6 @@ def connect_ssh():
 
 if __name__ == '__main__':
     mylog.log.info('Starting main.py')
+    myprint('we are testing the printing')
     connect_ssh()
-    mylog.log.info('Stoping main.py')
+    mylog.log.info('Stoping main.py\r\n\r\n')

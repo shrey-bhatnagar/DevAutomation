@@ -1,11 +1,12 @@
 
-12-5-17[03:00 PM], adding Initial code. <author- shrey>
-12-5-17[05:20 PM], adding json support to read config in JSON formate. <author- shrey>
-12-6-17[12:40 AM], adding Yaml support to read config in YAML formate. <author- shrey>
-12-6-17[02:57 PM], Divided code in ster-1 and step-2. <author- shrey>
-12-7-17[12:53 PM], Code working!!!, reading data from JSON config setup. <author- shrey>
-12-7-17[01:16 PM], moved config files to 'folder=configuration'. <author- shrey>
-12-7-17[01:30 PM], modified checkcompilation according to jenkins. <author- shrey>
-12-8-17[12:40 PM], added few log in the code. <author- shrey>
+12-05-17[03:00 PM], adding Initial code. <author- shrey>
+12-05-17[05:20 PM], adding json support to read config in JSON formate. <author- shrey>
+12-06-17[12:40 AM], adding Yaml support to read config in YAML formate. <author- shrey>
+12-06-17[02:57 PM], Divided code in ster-1 and step-2. <author- shrey>
+12-07-17[12:53 PM], Code working!!!, reading data from JSON config setup. <author- shrey>
+12-07-17[01:16 PM], moved config files to 'folder=configuration'. <author- shrey>
+12-07-17[01:30 PM], modified checkcompilation according to jenkins. <author- shrey>
+12-08-17[12:40 PM], added few log in the code. <author- shrey>
+12-12-17[12:40 PM], added error/status checking code and logs everywhere. <author- shrey>
 
 

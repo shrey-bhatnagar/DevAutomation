@@ -12,17 +12,18 @@ class Logger_check:
         self.log = logging.getLogger(modulename)
 
     def init_log(self, filename, level, logger):
-        directory = os.getcwd()
-        # directory = os.path.dirname(filename)
-        if not os.path.exists(directory):
-            os.makedirs(directory)
+        PROJECT_ROOT = os.path.dirname(os.path.abspath(__file__))
+        BASE_DIR = os.path.dirname(PROJECT_ROOT)
+        # directory = os.getcwd()
+        if not os.path.exists(BASE_DIR):
+            os.makedirs(BASE_DIR)
 
         formatter = logging.Formatter(
             '%(asctime)s %(levelname)s - %(message)s\r\n')
         log = logging.getLogger(logger)
 
         # filehandler=RotatingFileHandler(filenme,maxBytes=2000,backupCount=10)
-        loglocation = directory+"/logs/"+filename
+        loglocation = BASE_DIR+"/logs/"+filename
         filehandler = logging.FileHandler(loglocation, mode='a')
         filehandler.setFormatter(formatter)
 
