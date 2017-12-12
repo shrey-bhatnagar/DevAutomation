@@ -13,7 +13,7 @@ from files.osloconfig import shrey
 from files.readjson import get_jsonconfig
 from files.applogging import Logger_check
 
-
+#calling Logger_check function from applogging
 mylog = Logger_check('main', logging.INFO)
 
 
