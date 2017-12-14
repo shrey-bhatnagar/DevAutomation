@@ -36,6 +36,25 @@ def deluser(command, delusername):
     command.cmd(cmd1)
 
 
+def Check_test_status(list_data, last_val):
+    data1, newlist = [], []
+    count_pass = 0
+    count_fail = 0
+    data1 = list_data[-last_val:]
+    for i in data1:
+        newlist.append(i.split('\n')[0])
+    while '' in newlist:
+        newlist.remove('')
+    # print newlist
+    for s in newlist:
+        if 'PASS' in s:
+            count_pass = count_pass + 1
+        elif 'FAIL' in s:
+            count_fail = count_fail + 1
+    print("Cases PASS == %s" % count_pass)
+    print("Cases FAIL == %s" % count_fail)
+
+
 def devsetup(devinstalation, devdata):
     apt_git_success, apt_git_error = \
             devinstalation.cmd('apt install git -y', sudo=True)
@@ -71,8 +90,15 @@ def devsetup(devinstalation, devdata):
                 myprint('#################################')
     devinstalation.local_conf(devdata['file_name'],
                               devdata['data_local'])
+
+    print('####### RUNNING TEST #######')
+
+    dev_test_success, dev_test_error =\
+        devinstalation.cmd('source /opt/stack/devstack/run_tests.sh')
+    Check_test_status(dev_test_success, 13)
+    # print(dev_test_success, dev_test_error)
     # devinstalation.cmd('cd devstack')
-    # devinstalation.cmd('./stack')
+    # devinstalation.cmd('source /devstack/stack')
 
 
 def usercreation(userinstalation, devdata):

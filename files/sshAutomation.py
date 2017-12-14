@@ -128,19 +128,22 @@ class Devstack:
         time.sleep(3)
         channel.send('cd devstack\r\n')
         time.sleep(1)
-        # channel.send('./run_tests.sh\r\n')
-        channel.send('ls -lrt\r\n')
-        max_loops = 100
+        channel.send('./run_tests.sh\r\n')
+        # channel.send('ls -lrt\r\n')
+        max_loops = 5000
         not_done = True
-        MAX_BUFFER = 65535
-        i = 0
+        MAX_BUFFER = 655351
         output = ''
+        i = 0
+        sys.stdout.flush()
+        sys.stdin.flush()
         while (not_done) and (i <= max_loops):
             time.sleep(1)
             i += 1
             # Keep reading data as long as available (up to max_loops)
             if channel.recv_ready():
                 output += channel.recv(MAX_BUFFER)
+                # print("Lenght ", len(channel.recv(MAX_BUFFER)))
             else:
                 not_done = False
         myprint(output)
