@@ -7,11 +7,11 @@ import paramiko
 import time
 import pdb
 import logging
-from files.sshAutomation import Devstack
-from files.osloconfig import get_config
-from files.osloconfig import shrey
-from files.readjson import get_jsonconfig
-from files.applogging import Logger_check
+from Script_Dir.sshAutomation import Devstack
+from Script_Dir.osloconfig import get_config
+from Script_Dir.osloconfig import shrey
+from Script_Dir.readjson import get_jsonconfig
+from Script_Dir.applogging import Logger_check
 
 
 mylog = Logger_check('main', logging.INFO)
