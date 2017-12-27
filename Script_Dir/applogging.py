@@ -1,12 +1,15 @@
 #!/usr/bin/env python
-
+'''
+    This file contains the Logger Class.
+    The instance of the class will be used for logging in different ScriptLib
+'''
 
 import logging
 import os
 from logging.handlers import RotatingFileHandler
 
 
-class Logger_check:
+class LoggerCreate:
     def __init__(self, modulename, loglevel=logging.INFO):
         self.init_log(modulename+'.log', loglevel, modulename)
         self.log = logging.getLogger(modulename)
