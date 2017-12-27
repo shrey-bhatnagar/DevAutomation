@@ -6,18 +6,18 @@ import select
 import paramiko
 import time
 import logging
-from files.applogging import Logger_check
-from files.sshAutomation import Devstack
-from files.osloconfig import get_config
-from files.readjson import get_jsonconfig
-from files.readyaml import get_yamlconfig
+from Script_Dir.applogging import Logger_check
+from Script_Dir.sshAutomation import Devstack
+from Script_Dir.osloconfig import get_config
+from Script_Dir.readjson import get_jsonconfig
+from Script_Dir.readyaml import get_yamlconfig
 from main import maincompilationcheck
-from files.osloconfig import osloconfigcompilationcheck
-from files.readjson import readjsoncompilationcheck
-from files.readyaml import readyamlcompilationcheck
-from files.sshAutomation import sshAutomationcompilationcheck
-from files.applogging import apploggingcompilationcheck
-from files.applogging import Logger_check
+from Script_Dir.osloconfig import osloconfigcompilationcheck
+from Script_Dir.readjson import readjsoncompilationcheck
+from Script_Dir.readyaml import readyamlcompilationcheck
+from Script_Dir.sshAutomation import sshAutomationcompilationcheck
+from Script_Dir.applogging import apploggingcompilationcheck
+from Script_Dir.applogging import Logger_check
 
 
 mylog = Logger_check('checkcompilation', logging.INFO)
