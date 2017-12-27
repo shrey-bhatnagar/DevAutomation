@@ -5,7 +5,7 @@ import json
 
 
 def get_jsonconfig():
-    with open('Config_Dir/myappConfig.json') as file:
+    with open('configration/myappConfig.json') as file:
         jsondata = json.loads(file.read())
     return jsondata
 
