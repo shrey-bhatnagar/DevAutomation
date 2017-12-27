@@ -9,10 +9,11 @@ def get_jsonconfig():
         jsondata = json.loads(file.read())
     return jsondata
 
-
+#for module compilation check
 def readjsoncompilationcheck():
     return True
 
 
 if __name__ == '__main__':
     get_jsonconfig()
+            
