@@ -47,7 +47,6 @@ class Devstack:
 
         self.ssh.load_system_host_keys()
 
-
     def __del__(self):
         if self.ssh:
             try:

@@ -50,7 +50,7 @@ def check_test_status(list_data, last_val):
         elif 'FAIL' in s:
             count_fail = count_fail + 1
     print_log("TEST execution Completed")
-    print_log ( ":::Summary:::")
+    print_log(":::Summary:::")
     print_log("Cases PASS == %s" % count_pass)
     print_log("Cases FAIL == %s" % count_fail)
 
@@ -59,14 +59,15 @@ def devstack_infra_creation(devinstalation, devdata):
     devVersion = \
         'git clone https://github.com/shrey-bhatnagar/DevAutomation.git'
     apt_git_success, apt_git_error = \
-            devinstalation.cmd('apt install git -y', sudo=True)
+        devinstalation.cmd('apt install git -y', sudo=True)
     print_log("Installing GIT...............")
     success_check = 'git is already the newest version.\n'
     fail_check = 'Suggested packages:\n'
     if apt_git_success[3] == success_check:
-        print_log (apt_git_success)
-        print_log("Git is already the newest version....... Skipping GIT installation")
-    elif apt_git_success[3] == fail_check :
+        print_log(apt_git_success)
+        print_log("Git is already the newest version......
+                  . Skipping GIT installation")
+    elif apt_git_success[3] == fail_check:
         print_log(apt_git_error)
         print_log(".Git has been installed successfully.")
     else:
@@ -103,16 +104,18 @@ def devstack_infra_creation(devinstalation, devdata):
 
 
 def create_devstack_user(userinstalation, devdata):
-    print_log("Creating devstack user : %s" %devdata['devUser'])
+    print_log("Creating devstack user : %s" % devdata['devUser'])
     add_user = "useradd -s /bin/bash -d /opt/%s -m %s" % \
-            (devdata['devUser'], devdata['devUser'])
+               (devdata['devUser'], devdata['devUser'])
     add_user_to_file = 'echo "%s ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers' % \
-           (devdata['devUser'])
+                       (devdata['devUser'])
     devusername = devdata['devUser']
     devuserpwd = devdata['devUserPwd']
     setpwd = True
-    userinstalation.rootcmd(add_user, add_user_to_file, setpwd, devusername, devuserpwd)
+    userinstalation.rootcmd(add_user, add_user_to_file,
+                            setpwd, devusername, devuserpwd)
     print_log("User Creation Successfull")
+
 
 def fetch_data_for_user(jsondata):
     userdata = jsondata['userdata']
@@ -140,4 +143,5 @@ def connect_to_host():
 if __name__ == '__main__':
     print_log('Starting Devstack infrastructure Creation')
     connect_to_host()
-    print_log('Execution has been completed......Please check the log under ..../logs/event_logger.log')
+    print_log('Execution has been completed......Please check the log under\
+            ..../logs/event_logger.log')
