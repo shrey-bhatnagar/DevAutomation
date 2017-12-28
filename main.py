@@ -65,7 +65,7 @@ def devstack_infra_creation(devinstalation, devdata):
     fail_check = 'Suggested packages:\n'
     if apt_git_success[3] == success_check:
         print_log(apt_git_success)
-        print_log("Git is already the newest version......
+        print_log("Git is already the newest version......\
                   . Skipping GIT installation")
     elif apt_git_success[3] == fail_check:
         print_log(apt_git_error)

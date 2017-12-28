@@ -22,3 +22,59 @@
 
 
 
+2017-12-28 12:02:21,472 INFO - Starting checkcompilation.py
+
+2017-12-28 12:02:21,476 INFO - OSLO_config read pass
+
+2017-12-28 12:02:50,409 INFO - Starting checkcompilation.py
+
+2017-12-28 12:02:50,413 INFO - OSLO_config read pass
+
+2017-12-28 12:04:12,344 INFO - Starting checkcompilation.py
+
+2017-12-28 12:04:12,348 INFO - OSLO_config read pass
+
+2017-12-28 12:04:12,349 INFO - JSON read pass
+
+2017-12-28 12:04:12,356 INFO - YAML read pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of main.py pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of osloconfig.py pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of readjson.py pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of readyaml.py pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of sshAutomation.py pass
+
+2017-12-28 12:04:12,356 INFO - interpretation of applogging.py pass
+
+2017-12-28 12:04:12,356 INFO - Stoping checkcompilation.py
+
+
+
+2017-12-28 12:04:58,042 INFO - Starting checkcompilation.py
+
+2017-12-28 12:04:58,046 INFO - OSLO_config read pass
+
+2017-12-28 12:04:58,046 INFO - JSON read pass
+
+2017-12-28 12:04:58,053 INFO - YAML read pass
+
+2017-12-28 12:04:58,053 INFO - interpretation of main.py pass
+
+2017-12-28 12:04:58,053 INFO - interpretation of osloconfig.py pass
+
+2017-12-28 12:04:58,053 INFO - interpretation of readjson.py pass
+
+2017-12-28 12:04:58,053 INFO - interpretation of readyaml.py pass
+
+2017-12-28 12:04:58,054 INFO - interpretation of sshAutomation.py pass
+
+2017-12-28 12:04:58,054 INFO - interpretation of applogging.py pass
+
+2017-12-28 12:04:58,054 INFO - Stoping checkcompilation.py
+
+
+
