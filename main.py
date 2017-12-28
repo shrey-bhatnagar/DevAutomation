@@ -8,6 +8,7 @@ import time
 import pdb
 import logging
 from Script_Dir.sshAutomation import Devstack
+from Script_Dir.sshAutomation import ping_check_for_server
 from Script_Dir.readjson import get_jsonconfig
 from Script_Dir.applogging import LoggerCreate
 
@@ -56,6 +57,7 @@ def check_test_status(list_data, last_val):
 
 
 def devstack_infra_creation(devinstalation, devdata):
+
     devVersion = \
         'git clone https://github.com/shrey-bhatnagar/DevAutomation.git'
     apt_git_success, apt_git_error = \
@@ -136,12 +138,16 @@ def install_devstack(devdata):
 
 def connect_to_host():
     jsondata = get_jsonconfig()
+    if ping_check_for_server(jsondata['appdata']['devdata']['ip']):
+        pass
+    else:
+        sys.exit()
     fetch_data_for_user(jsondata['appdata'])
     install_devstack(jsondata['appdata']['devdata'])
 
 
 if __name__ == '__main__':
-    print_log('Starting Devstack infrastructure Creation')
+    print_log('Starting Devstack infrastructure Creation\n')
     connect_to_host()
     print_log('Execution has been completed......Please check the log under\
             ..../logs/event_logger.log')
