@@ -23,10 +23,10 @@ def ping_check_for_server(ip_add):
     response = os.system("ping -c 1 {}".format(ip_add))
 
     if response == 0:
-        print_log("Server is Active!")
+        print_log("Server is Active!\n")
         return True
     else:
-        print_log("Server is inactive!")
+        print_log("Server is inactive!\n")
         return False
 
 
