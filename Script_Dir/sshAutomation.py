@@ -8,19 +8,19 @@ import time
 import re
 import exception
 import logging
-from Script_Dir.applogging import Logger_check
+from Script_Dir.applogging import LoggerCreate
 
 
-mylog = Logger_check('sshAutomation', logging.INFO)
+mylog = LoggerCreate('event_logger', logging.INFO)
 
 
-def myprint(str):
+def print_log(str):
     print(str)
     mylog.log.info(str)
 
 
 class Devstack:
-    ip_address = 'x.x.x.x'
+    ip_address = None
 
     def __init__(self, ip, user, pwd):
         self.ip_address = ip
@@ -29,39 +29,45 @@ class Devstack:
         self.ssh = paramiko.SSHClient()
         self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
         try:
-            myprint("trying to SSH connection with %s" % self.ip_address)
+            print_log("trying to SSH connection with %s" % self.ip_address)
             self.ssh.connect(ip, username=user, password=pwd, port=22)
-            myprint("SSH connection established to %s" % self.ip_address)
-        except paramiko.SSHException:
-            myprint("Connection Failed")
-            quit()
+            print_log("SSH connection established to %s" % self.ip_address)
+
         except paramiko.AuthenticationException:
-            myprint("Authentication Failed")
-            quit()
+            print_log("Authentication Failed")
+
+        except paramiko.BadHostKeyException:
+            print_log("Bad HostKey values")
+
+        except paramiko.SSHException:
+            print_log("Connection Failed")
+
         except:
-            myprint("Unknown error")
-            quit()
+            print_log("Unknown error")
+
         self.ssh.load_system_host_keys()
 
+
     def __del__(self):
-        if self.ssh is not None:
+        if self.ssh:
             try:
-                myprint("SSH connection clossed for %s\r\n" % self.ip_address)
+                print_log("SSH connection closed for %s\r\n" % self.ip_address)
                 self.ssh.close()
                 self.ssh = None
             except:
                 pass
 
-    def close(self):
-        if self.ssh is not None:
+    def close_host_connection(self):
+        if self.ssh:
             try:
-                myprint("SSH connection clossed for %s\r\n" % self.ip_address)
+                print_log("SSH connection closed for %s\r\n" % self.ip_address)
                 self.ssh.close()
                 self.ssh = None
             except:
                 pass
 
     def local_conf(self, filename, data):
+        f = None
         self.sftp = self.ssh.open_sftp()
         filepath = filename
         try:
@@ -72,8 +78,9 @@ class Devstack:
                 filepath = 'devstack/' + filename
             f = self.sftp.open(filepath, 'w')
             f.write(data)
+
         except exception as e:
-            myprint('*** Caught exception: %s: %s' % (e.__class__, e))
+            print_log('*** Caught exception: %s: %s' % (e.__class__, e))
         f.close()
 
     def rootcmd(self, cmd1, cmd2, setpwd=False,
@@ -87,7 +94,7 @@ class Devstack:
         # while not channel.recv_ready():
         #     time.sleep(3)
         # out = channel.recv(9999)
-        # myprint(out.decode("ascii"))
+        # print_log(out.decode("ascii"))
         channel.send(cmd1+'\r\n')
         time.sleep(2)
         channel.send(cmd2+'\r\n')
@@ -102,7 +109,7 @@ class Devstack:
         while not channel.recv_ready():
             time.sleep(3)
         out = channel.recv(9999)
-        myprint(out.decode("ascii"))
+        print_log(out.decode("ascii"))
 
     def cmd(self, command, sudo=False):
         feed_password = False
@@ -146,15 +153,16 @@ class Devstack:
                 # print("Lenght ", len(channel.recv(MAX_BUFFER)))
             else:
                 not_done = False
-        myprint(output)
+        print_log(output)
 
 
 def sshAutomationcompilationcheck():
     return True
 
+
 if __name__ == '__main__':
-    myprint('starting ' + __name__)
+    print_log('starting ' + __name__)
     instal1 = Devstack(ip, username, password)
     instal1.cmd('ls -al')
     instal1.local_conf(file_name, data_local)
-    myprint('stoping')
+    print_log('stoping')
