@@ -8,7 +8,7 @@ import time
 import re
 import exception
 import logging
-from ScriptLib.applogging import LoggerCreate
+from Script_Dir.applogging import LoggerCreate
 
 
 mylog = LoggerCreate('event_logger', logging.INFO)
@@ -20,7 +20,7 @@ def print_log(str):
 
 
 class Devstack:
-    ip_address = 'x.x.x.x'
+    ip_address = None
 
     def __init__(self, ip, user, pwd):
         self.ip_address = ip
@@ -35,33 +35,32 @@ class Devstack:
 
         except paramiko.AuthenticationException:
             print_log("Authentication Failed")
-            quit()
 
         except paramiko.BadHostKeyException:
             print_log("Bad HostKey values")
 
         except paramiko.SSHException:
             print_log("Connection Failed")
-            quit()
 
         except:
             print_log("Unknown error")
-            quit()
+
         self.ssh.load_system_host_keys()
 
+
     def __del__(self):
-        if self.ssh is not None:
+        if self.ssh:
             try:
-                print_log("SSH connection clossed for %s\r\n" % self.ip_address)
+                print_log("SSH connection closed for %s\r\n" % self.ip_address)
                 self.ssh.close()
                 self.ssh = None
             except:
                 pass
 
     def close_host_connection(self):
-        if self.ssh is not None:
+        if self.ssh:
             try:
-                print_log("SSH connection clossed for %s\r\n" % self.ip_address)
+                print_log("SSH connection closed for %s\r\n" % self.ip_address)
                 self.ssh.close()
                 self.ssh = None
             except:
@@ -159,6 +158,7 @@ class Devstack:
 
 def sshAutomationcompilationcheck():
     return True
+
 
 if __name__ == '__main__':
     print_log('starting ' + __name__)
