@@ -18,6 +18,15 @@ def print_log(str):
     print(str)
     mylog.log.info(str)
 
+def ping_check_for_server(ip_add):
+    response = os.system("ping -c 1 {}".format(ip_add))
+    if response == 0:
+        print_log("Server is Active!\n")
+        return True
+    else:
+        print_log("Server is inactive!\n")
+        return False
+
 
 def ping_check_for_server(ip_add):
     response = os.system("ping -n 1 {}".format(ip_add))  # use -c/-n
@@ -59,8 +68,7 @@ class Devstack:
                 print_log("Unknown error")
 
             self.ssh.load_system_host_keys()
-
-        else:
+           else:
             sys.exit()
 
     def __del__(self):
@@ -131,7 +139,7 @@ class Devstack:
         if (sudo):
             command = "sudo -S -p '' %s" % command
             feed_password = self.password is not None and \
-                len(self.password) > 0
+                            len(self.password) > 0
         stdin, stdout, stderr = self.ssh.exec_command(command)
         if feed_password:
             stdin.write(self.password + "\n")

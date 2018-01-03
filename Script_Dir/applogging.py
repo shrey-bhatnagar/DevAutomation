@@ -25,7 +25,7 @@ class LoggerCreate:
             '%(asctime)s %(levelname)s - %(message)s\r\n')
         log = logging.getLogger(logger)
 
-        # filehandler=RotatingFileHandler(filenme,maxBytes=2000,backupCount=10)
+        # filehandler=RotatingFileHandler(filenme, maxBytes=2000, backupCount=10)
         loglocation = BASE_DIR+"/logs/"+filename
         filehandler = logging.FileHandler(loglocation, mode='a')
         filehandler.setFormatter(formatter)
