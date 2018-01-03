@@ -64,9 +64,9 @@ def devstack_infra_creation(devinstalation, devdata):
     success_check = 'git is already the newest version.\n'
     fail_check = 'Suggested packages:\n'
     if apt_git_success[3] == success_check:
-        print_log(apt_git_success)
-        print_log("Git is already the newest version......\
-                  . Skipping GIT installation")
+        # print_log(apt_git_success)
+        print_log("Git is already the newest version.......")
+        print_log("Skipping GIT installation")
     elif apt_git_success[3] == fail_check:
         print_log(apt_git_error)
         print_log(".Git has been installed successfully.")
@@ -84,11 +84,11 @@ def devstack_infra_creation(devinstalation, devdata):
     if clone_repo_fail != []:
         sub_clone = clone_repo_fail[0].split()
         if sub_clone[0] == "Cloning":
-            print_log(clone_repo_fail)
+            # print_log(clone_repo_fail)
             print_log('Repository Cloned Successfully')
         else:
             if sub_clone[0] == 'fatal:':
-                print_log(clone_repo_fail)
+                # print_log(clone_repo_fail)
                 print_log('Repository Already Exists.... Cloning not required')
     devinstalation.local_conf(devdata['file_name'],
                               devdata['data_local'])
@@ -143,5 +143,5 @@ def connect_to_host():
 if __name__ == '__main__':
     print_log('Starting Devstack infrastructure Creation')
     connect_to_host()
-    print_log('Execution has been completed......Please check the log under\
-            ..../logs/event_logger.log')
+    print_log('Execution has been completed......')
+    print_log('Please check the log under..../logs/event_logger.log')

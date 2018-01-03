@@ -1,0 +1,844 @@
+2017-12-28 12:14:50,623 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 12:14:50,623 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 12:14:50,623 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 12:14:50,623 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 12:14:56,313 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 12:14:56,313 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 12:14:56,315 INFO - Creating devstack user : shrey11
+
+2017-12-28 12:14:56,315 INFO - Creating devstack user : shrey11
+
+2017-12-28 12:15:16,293 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey11 -m shrey11
+root@Devstack:~# 
+root@Devstack:~# echo "shrey11 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey11
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 12:15:16,293 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey11 -m shrey11
+root@Devstack:~# 
+root@Devstack:~# echo "shrey11 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey11
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 12:15:16,293 INFO - User Creation Successfull
+
+2017-12-28 12:15:16,293 INFO - User Creation Successfull
+
+2017-12-28 12:15:16,293 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 12:15:16,293 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 12:15:16,360 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 12:15:16,360 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 12:15:21,587 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 12:15:21,587 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 12:15:24,504 INFO - Installing GIT...............
+
+2017-12-28 12:15:24,504 INFO - Installing GIT...............
+
+2017-12-28 12:15:24,505 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 12:15:24,505 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 12:15:24,505 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 12:15:24,505 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 12:15:24,506 INFO - Cloning repository.
+
+2017-12-28 12:15:24,506 INFO - Cloning repository.
+
+2017-12-28 12:15:24,506 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 12:15:24,506 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 12:15:29,862 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2017-12-28 12:15:29,862 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2017-12-28 12:15:29,863 INFO - Repository Cloned Successfully
+
+2017-12-28 12:15:29,863 INFO - Repository Cloned Successfully
+
+2017-12-28 12:15:34,716 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 12:15:34,716 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 12:15:55,338 INFO - TEST execution Completed
+
+2017-12-28 12:15:55,338 INFO - TEST execution Completed
+
+2017-12-28 12:15:55,339 INFO - :::Summary:::
+
+2017-12-28 12:15:55,339 INFO - :::Summary:::
+
+2017-12-28 12:15:55,339 INFO - Cases PASS == 11
+
+2017-12-28 12:15:55,339 INFO - Cases PASS == 11
+
+2017-12-28 12:15:55,339 INFO - Cases FAIL == 0
+
+2017-12-28 12:15:55,339 INFO - Cases FAIL == 0
+
+2017-12-28 12:15:55,339 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 12:15:55,339 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 12:15:55,458 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2017-12-28 12:15:55,458 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2017-12-28 13:18:42,326 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 13:18:42,326 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 13:18:42,327 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:18:42,327 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:18:48,306 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:18:48,306 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:18:48,307 INFO - Creating devstack user : shrey22
+
+2017-12-28 13:18:48,307 INFO - Creating devstack user : shrey22
+
+2017-12-28 13:19:08,477 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey22 -m shrey22
+root@Devstack:~# 
+root@Devstack:~# echo "shrey22 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey22
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 13:19:08,477 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey22 -m shrey22
+root@Devstack:~# 
+root@Devstack:~# echo "shrey22 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey22
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 13:19:08,477 INFO - User Creation Successfull
+
+2017-12-28 13:19:08,477 INFO - User Creation Successfull
+
+2017-12-28 13:19:08,477 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:19:08,477 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:19:08,590 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:19:08,590 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:19:13,995 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:19:13,995 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:19:17,499 INFO - Installing GIT...............
+
+2017-12-28 13:19:17,499 INFO - Installing GIT...............
+
+2017-12-28 13:19:17,499 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 13:19:17,499 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 13:19:17,500 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 13:19:17,500 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 13:19:17,500 INFO - Cloning repository.
+
+2017-12-28 13:19:17,500 INFO - Cloning repository.
+
+2017-12-28 13:19:17,500 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 13:19:17,500 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 13:19:22,843 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2017-12-28 13:19:22,843 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2017-12-28 13:19:22,843 INFO - Repository Cloned Successfully
+
+2017-12-28 13:19:22,843 INFO - Repository Cloned Successfully
+
+2017-12-28 13:19:27,833 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 13:19:27,833 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 13:19:40,873 INFO - TEST execution Completed
+
+2017-12-28 13:19:40,873 INFO - TEST execution Completed
+
+2017-12-28 13:19:40,874 INFO - :::Summary:::
+
+2017-12-28 13:19:40,874 INFO - :::Summary:::
+
+2017-12-28 13:19:40,874 INFO - Cases PASS == 11
+
+2017-12-28 13:19:40,874 INFO - Cases PASS == 11
+
+2017-12-28 13:19:40,875 INFO - Cases FAIL == 0
+
+2017-12-28 13:19:40,875 INFO - Cases FAIL == 0
+
+2017-12-28 13:19:40,875 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:19:40,875 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:19:40,988 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2017-12-28 13:19:40,988 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2017-12-28 13:20:05,384 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 13:20:05,384 INFO - Starting Devstack infrastructure Creation
+
+2017-12-28 13:20:05,384 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:20:05,384 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:20:11,304 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:20:11,304 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:20:11,305 INFO - Creating devstack user : shrey22
+
+2017-12-28 13:20:11,305 INFO - Creating devstack user : shrey22
+
+2017-12-28 13:20:31,539 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey22 -m shrey22
+useradd: user 'shrey22' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "shrey22 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey22
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 13:20:31,539 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/shrey22 -m shrey22
+useradd: user 'shrey22' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "shrey22 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd shrey22
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2017-12-28 13:20:31,539 INFO - User Creation Successfull
+
+2017-12-28 13:20:31,539 INFO - User Creation Successfull
+
+2017-12-28 13:20:31,539 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:20:31,539 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:20:31,652 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:20:31,652 INFO - trying to SSH connection with 192.168.195.182
+
+2017-12-28 13:20:36,984 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:20:36,984 INFO - SSH connection established to 192.168.195.182
+
+2017-12-28 13:20:40,541 INFO - Installing GIT...............
+
+2017-12-28 13:20:40,541 INFO - Installing GIT...............
+
+2017-12-28 13:20:40,541 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 13:20:40,541 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2017-12-28 13:20:40,542 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 13:20:40,542 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2017-12-28 13:20:40,542 INFO - Cloning repository.
+
+2017-12-28 13:20:40,542 INFO - Cloning repository.
+
+2017-12-28 13:20:40,542 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 13:20:40,542 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2017-12-28 13:20:42,262 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2017-12-28 13:20:42,262 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2017-12-28 13:20:42,263 INFO - Repository Already Exists.... Cloning not required
+
+2017-12-28 13:20:42,263 INFO - Repository Already Exists.... Cloning not required
+
+2017-12-28 13:20:47,260 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 13:20:47,260 INFO - RUNNING DEVSTACK TEST
+
+2017-12-28 13:21:00,215 INFO - TEST execution Completed
+
+2017-12-28 13:21:00,215 INFO - TEST execution Completed
+
+2017-12-28 13:21:00,215 INFO - :::Summary:::
+
+2017-12-28 13:21:00,215 INFO - :::Summary:::
+
+2017-12-28 13:21:00,215 INFO - Cases PASS == 11
+
+2017-12-28 13:21:00,215 INFO - Cases PASS == 11
+
+2017-12-28 13:21:00,216 INFO - Cases FAIL == 0
+
+2017-12-28 13:21:00,216 INFO - Cases FAIL == 0
+
+2017-12-28 13:21:00,216 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:21:00,216 INFO - SSH connection closed for 192.168.195.182
+
+
+2017-12-28 13:21:00,329 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2017-12-28 13:21:00,329 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2018-01-03 14:29:31,265 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:29:31,265 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:29:31,266 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:29:31,266 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:29:36,968 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:29:36,968 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:29:36,986 INFO - Creating devstack user : stack123
+
+2018-01-03 14:29:36,986 INFO - Creating devstack user : stack123
+
+2018-01-03 14:29:57,138 INFO -   Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Wed Jan  3 10:22:25 2018 from 192.168.182.93
+tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:29:57,138 INFO -   Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+0 packages can be updated.
+0 updates are security updates.
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Wed Jan  3 10:22:25 2018 from 192.168.182.93
+tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:29:57,138 INFO - User Creation Successfull
+
+2018-01-03 14:29:57,138 INFO - User Creation Successfull
+
+2018-01-03 14:29:57,138 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:29:57,138 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:29:57,148 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:29:57,148 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:30:02,443 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:30:02,443 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:30:05,495 INFO - Installing GIT...............
+
+2018-01-03 14:30:05,495 INFO - Installing GIT...............
+
+2018-01-03 14:30:05,496 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2018-01-03 14:30:05,496 INFO - [u'Reading package lists...\n', u'Building dependency tree...\n', u'Reading state information...\n', u'git is already the newest version.\n', u'0 upgraded, 0 newly installed, 0 to remove and 0 not upgraded.\n']
+
+2018-01-03 14:30:05,496 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2018-01-03 14:30:05,496 INFO - Git is already the newest version......                  . Skipping GIT installation
+
+2018-01-03 14:30:05,496 INFO - Cloning repository.
+
+2018-01-03 14:30:05,496 INFO - Cloning repository.
+
+2018-01-03 14:30:05,496 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:30:05,496 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:30:12,447 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2018-01-03 14:30:12,447 INFO - [u"Cloning into 'DevAutomation'...\n"]
+
+2018-01-03 14:30:12,447 INFO - Repository Cloned Successfully
+
+2018-01-03 14:30:12,447 INFO - Repository Cloned Successfully
+
+2018-01-03 14:30:17,447 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:30:17,447 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:30:38,952 INFO - TEST execution Completed
+
+2018-01-03 14:30:38,952 INFO - TEST execution Completed
+
+2018-01-03 14:30:38,953 INFO - :::Summary:::
+
+2018-01-03 14:30:38,953 INFO - :::Summary:::
+
+2018-01-03 14:30:38,953 INFO - Cases PASS == 11
+
+2018-01-03 14:30:38,953 INFO - Cases PASS == 11
+
+2018-01-03 14:30:38,953 INFO - Cases FAIL == 0
+
+2018-01-03 14:30:38,953 INFO - Cases FAIL == 0
+
+2018-01-03 14:30:38,954 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:30:38,954 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:30:39,073 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2018-01-03 14:30:39,073 INFO - Execution has been completed......Please check the log under            ..../logs/event_logger.log
+
+2018-01-03 14:32:29,183 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:32:29,183 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:32:29,183 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:32:29,183 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:32:34,587 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:32:34,587 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:32:34,589 INFO - Creating devstack user : stack123
+
+2018-01-03 14:32:34,589 INFO - Creating devstack user : stack123
+
+2018-01-03 14:32:54,915 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+useradd: user 'stack123' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:32:54,915 INFO - tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+useradd: user 'stack123' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:32:54,915 INFO - User Creation Successfull
+
+2018-01-03 14:32:54,915 INFO - User Creation Successfull
+
+2018-01-03 14:32:54,915 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:32:54,915 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:32:55,035 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:32:55,035 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:33:00,346 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:33:00,346 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:33:03,830 INFO - Installing GIT...............
+
+2018-01-03 14:33:03,830 INFO - Installing GIT...............
+
+2018-01-03 14:33:03,831 INFO - Git is already the newest version....... Skipping GIT installation
+
+2018-01-03 14:33:03,831 INFO - Git is already the newest version....... Skipping GIT installation
+
+2018-01-03 14:33:03,831 INFO - Cloning repository.
+
+2018-01-03 14:33:03,831 INFO - Cloning repository.
+
+2018-01-03 14:33:03,831 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:33:03,831 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:33:05,508 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2018-01-03 14:33:05,508 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2018-01-03 14:33:05,508 INFO - Repository Already Exists.... Cloning not required
+
+2018-01-03 14:33:05,508 INFO - Repository Already Exists.... Cloning not required
+
+2018-01-03 14:33:10,447 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:33:10,447 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:33:23,412 INFO - TEST execution Completed
+
+2018-01-03 14:33:23,412 INFO - TEST execution Completed
+
+2018-01-03 14:33:23,413 INFO - :::Summary:::
+
+2018-01-03 14:33:23,413 INFO - :::Summary:::
+
+2018-01-03 14:33:23,413 INFO - Cases PASS == 11
+
+2018-01-03 14:33:23,413 INFO - Cases PASS == 11
+
+2018-01-03 14:33:23,413 INFO - Cases FAIL == 0
+
+2018-01-03 14:33:23,413 INFO - Cases FAIL == 0
+
+2018-01-03 14:33:23,413 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:33:23,413 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:33:23,533 INFO - Execution has been completed......Please check the log under..../logs/event_logger.log
+
+2018-01-03 14:33:23,533 INFO - Execution has been completed......Please check the log under..../logs/event_logger.log
+
+2018-01-03 14:36:39,114 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:36:39,114 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:36:39,114 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:36:39,114 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:36:44,465 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:36:44,465 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:36:44,466 INFO - Creating devstack user : stack123
+
+2018-01-03 14:36:44,466 INFO - Creating devstack user : stack123
+
+2018-01-03 14:37:04,960 INFO -   Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Wed Jan  3 14:32:36 2018 from incn1wsbhatna1.tellabs-west.tellabsinc.net
+tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+useradd: user 'stack123' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:37:04,960 INFO -   Graph this data and manage this system at:
+    https://landscape.canonical.com/
+
+New release '16.04.3 LTS' available.
+Run 'do-release-upgrade' to upgrade to it.
+
+Your Hardware Enablement Stack (HWE) is supported until April 2019.
+Last login: Wed Jan  3 14:32:36 2018 from incn1wsbhatna1.tellabs-west.tellabsinc.net
+tellabs@Devstack:~$ sudo su -
+[sudo] password for tellabs: 
+tellabs$123
+
+Sorry, try again.
+[sudo] password for tellabs: 
+root@Devstack:~# useradd -s /bin/bash -d /opt/stack123 -m stack123
+useradd: user 'stack123' already exists
+root@Devstack:~# 
+root@Devstack:~# echo "stack123 ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers
+root@Devstack:~# 
+root@Devstack:~# passwd stack123
+Enter new UNIX password: 
+Retype new UNIX password: 
+passwd: password updated successfully
+root@Devstack:~# 
+root@Devstack:~# 
+
+2018-01-03 14:37:04,960 INFO - User Creation Successfull
+
+2018-01-03 14:37:04,960 INFO - User Creation Successfull
+
+2018-01-03 14:37:04,960 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:37:04,960 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:37:05,078 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:37:05,078 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:37:11,173 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:37:11,173 INFO - SSH connection established to 192.168.195.182
+
+2018-01-03 14:37:14,766 INFO - Installing GIT...............
+
+2018-01-03 14:37:14,766 INFO - Installing GIT...............
+
+2018-01-03 14:37:14,766 INFO - Git is already the newest version.......
+
+2018-01-03 14:37:14,766 INFO - Git is already the newest version.......
+
+2018-01-03 14:37:14,767 INFO - Skipping GIT installation
+
+2018-01-03 14:37:14,767 INFO - Skipping GIT installation
+
+2018-01-03 14:37:14,767 INFO - Cloning repository.
+
+2018-01-03 14:37:14,767 INFO - Cloning repository.
+
+2018-01-03 14:37:14,767 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:37:14,767 INFO - git clone https://github.com/shrey-bhatnagar/DevAutomation.git
+
+2018-01-03 14:37:16,428 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2018-01-03 14:37:16,428 INFO - [u"fatal: destination path 'DevAutomation' already exists and is not an empty directory.\n"]
+
+2018-01-03 14:37:16,428 INFO - Repository Already Exists.... Cloning not required
+
+2018-01-03 14:37:16,428 INFO - Repository Already Exists.... Cloning not required
+
+2018-01-03 14:37:21,387 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:37:21,387 INFO - RUNNING DEVSTACK TEST
+
+2018-01-03 14:37:34,227 INFO - TEST execution Completed
+
+2018-01-03 14:37:34,227 INFO - TEST execution Completed
+
+2018-01-03 14:37:34,228 INFO - :::Summary:::
+
+2018-01-03 14:37:34,228 INFO - :::Summary:::
+
+2018-01-03 14:37:34,228 INFO - Cases PASS == 11
+
+2018-01-03 14:37:34,228 INFO - Cases PASS == 11
+
+2018-01-03 14:37:34,228 INFO - Cases FAIL == 0
+
+2018-01-03 14:37:34,228 INFO - Cases FAIL == 0
+
+2018-01-03 14:37:34,228 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:37:34,228 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:37:34,345 INFO - Execution has been completed......
+
+2018-01-03 14:37:34,345 INFO - Execution has been completed......
+
+2018-01-03 14:37:34,345 INFO - Please check the log under..../logs/event_logger.log
+
+2018-01-03 14:37:34,345 INFO - Please check the log under..../logs/event_logger.log
+
+2018-01-03 14:39:33,291 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:39:33,291 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:39:33,291 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:39:33,291 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:39:54,300 INFO - Unknown error
+
+2018-01-03 14:39:54,300 INFO - Unknown error
+
+2018-01-03 14:39:54,302 INFO - Creating devstack user : stack123
+
+2018-01-03 14:39:54,302 INFO - Creating devstack user : stack123
+
+2018-01-03 14:39:54,319 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:39:54,319 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:40:29,341 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:40:29,341 INFO - Starting Devstack infrastructure Creation
+
+2018-01-03 14:40:29,341 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:40:29,341 INFO - trying to SSH connection with 192.168.195.182
+
+2018-01-03 14:40:50,356 INFO - Unknown error
+
+2018-01-03 14:40:50,356 INFO - Unknown error
+
+2018-01-03 14:40:50,357 INFO - Creating devstack user : stack123
+
+2018-01-03 14:40:50,357 INFO - Creating devstack user : stack123
+
+2018-01-03 14:40:50,372 INFO - SSH connection closed for 192.168.195.182
+
+
+2018-01-03 14:40:50,372 INFO - SSH connection closed for 192.168.195.182
+
+

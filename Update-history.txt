@@ -12,6 +12,7 @@
 12-27-17[04:40 PM], Fixed 'bug #2'. <author- Hussain>
 12-28-17[11:56 PM], commited "Fixes #2" and corrected pep8. <author- shrey>
 12-28-17[12:05 PM], Fixed jenkin build issue and corrected pep8. <author- shrey>
+12-29-17[11:05 PM], added ping check code for server checking. <author- hussain>
 
 
 
