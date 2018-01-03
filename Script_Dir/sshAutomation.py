@@ -18,6 +18,17 @@ def print_log(str):
     print(str)
     mylog.log.info(str)
 
+def ping_check_for_server(ip_add):
+
+    response = os.system("ping -c 1 {}".format(ip_add))
+
+    if response == 0:
+        print_log("Server is Active!\n")
+        return True
+    else:
+        print_log("Server is inactive!\n")
+        return False
+
 
 class Devstack:
     ip_address = None
@@ -26,26 +37,31 @@ class Devstack:
         self.ip_address = ip
         self.username = user
         self.password = pwd
-        self.ssh = paramiko.SSHClient()
-        self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-        try:
-            print_log("trying to SSH connection with %s" % self.ip_address)
-            self.ssh.connect(ip, username=user, password=pwd, port=22)
-            print_log("SSH connection established to %s" % self.ip_address)
 
-        except paramiko.AuthenticationException:
-            print_log("Authentication Failed")
+        if ping_check_for_server:
+            self.ssh = paramiko.SSHClient()
+            self.ssh.set_missing_host_key_policy(paramiko.AutoAddPolicy())
+            try:
+                print_log("trying to SSH connection with %s" % self.ip_address)
+                self.ssh.connect(ip, username=user, password=pwd, port=22)
+                print_log("SSH connection established to %s" % self.ip_address)
 
-        except paramiko.BadHostKeyException:
-            print_log("Bad HostKey values")
+            except paramiko.AuthenticationException:
+                print_log("Authentication Failed")
 
-        except paramiko.SSHException:
-            print_log("Connection Failed")
+            except paramiko.BadHostKeyException:
+                print_log("Bad HostKey values")
 
-        except:
-            print_log("Unknown error")
+            except paramiko.SSHException:
+                print_log("Connection Failed")
 
-        self.ssh.load_system_host_keys()
+            except:
+                print_log("Unknown error")
+
+            self.ssh.load_system_host_keys()
+
+        else:
+            sys.exit()
 
     def __del__(self):
         if self.ssh:
@@ -114,8 +130,8 @@ class Devstack:
         feed_password = False
         if (sudo):
             command = "sudo -S -p '' %s" % command
-            feed_password = self.password is not None and\
-                len(self.password) > 0
+            feed_password = self.password is not None and \
+                            len(self.password) > 0
         stdin, stdout, stderr = self.ssh.exec_command(command)
         if feed_password:
             stdin.write(self.password + "\n")
