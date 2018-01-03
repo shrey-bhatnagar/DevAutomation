@@ -28,6 +28,17 @@ def ping_check_for_server(ip_add):
         return False
 
 
+def ping_check_for_server(ip_add):
+    response = os.system("ping -n 1 {}".format(ip_add))  # use -c/-n
+
+    if response == 0:
+        print_log("Server is Active!\n")
+        return True
+    else:
+        print_log("Server is inactive!\n")
+        return False
+
+
 class Devstack:
     ip_address = None
 
@@ -57,10 +68,8 @@ class Devstack:
                 print_log("Unknown error")
 
             self.ssh.load_system_host_keys()
-
-        else:
+           else:
             sys.exit()
-
 
     def __del__(self):
         if self.ssh:

@@ -6,7 +6,7 @@ import select
 import paramiko
 import time
 import logging
-from Script_Dir.applogging import Logger_check
+from Script_Dir.applogging import LoggerCreate
 from Script_Dir.sshAutomation import Devstack
 from Script_Dir.osloconfig import get_config
 from Script_Dir.readjson import get_jsonconfig
@@ -17,10 +17,9 @@ from Script_Dir.readjson import readjsoncompilationcheck
 from Script_Dir.readyaml import readyamlcompilationcheck
 from Script_Dir.sshAutomation import sshAutomationcompilationcheck
 from Script_Dir.applogging import apploggingcompilationcheck
-from Script_Dir.applogging import Logger_check
 
 
-mylog = Logger_check('checkcompilation', logging.INFO)
+mylog = LoggerCreate('checkcompilation', logging.INFO)
 
 
 def myprint(str):
